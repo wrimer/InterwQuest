@@ -1,0 +1,42 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">@dimen/spacing_normal</dimen>
+    <dimen name="activity_vertical_margin">@dimen/spacing_normal</dimen>
+
+    <!--spacing-->                               <!-- Formula: normal ± (postfix * 4)-->
+    <dimen name="spacing_large_4">@dimen/_32sdp</dimen>   <!-- normal + (4 * 4)-->
+    <dimen name="spacing_large_3">@dimen/_28sdp</dimen>   <!-- normal + (3 * 4)-->
+    <dimen name="spacing_large_2">@dimen/_24sdp</dimen>   <!-- normal + (2 * 4)-->
+    <dimen name="spacing_large_1">@dimen/_20sdp</dimen>   <!-- normal + (1 * 4)-->
+    <dimen name="spacing_normal">@dimen/_16sdp</dimen>    <!-- normal          -->
+    <dimen name="spacing_small_1">@dimen/_12sdp</dimen>   <!-- normal - (1 * 4)-->
+    <dimen name="spacing_small_2">@dimen/_8sdp</dimen>    <!-- normal - (2 * 4)-->
+    <dimen name="spacing_small_3">@dimen/_4sdp</dimen>    <!-- normal - (3 * 4)-->
+    <dimen name="spacing_small_4">@dimen/_2sdp</dimen>    <!-- просто 2dp      -->
+
+    <!--text-->                                  <!-- Formula: normal ± (postfix * 2)-->
+    <dimen name="text_large_4">@dimen/_22sdp</dimen>      <!-- normal + (4 * 2)-->
+    <dimen name="text_large_3">@dimen/_20sdp</dimen>      <!-- normal + (3 * 2)-->
+    <dimen name="text_large_2">@dimen/_18sdp</dimen>      <!-- normal + (2 * 2)-->
+    <dimen name="text_large_1">@dimen/_16sdp</dimen>      <!-- normal + (1 * 2)-->
+    <dimen name="text_normal">@dimen/_14sdp</dimen>       <!-- normal          -->
+    <dimen name="text_small_1">@dimen/_12sdp</dimen>      <!-- normal - (1 * 2)-->
+    <dimen name="text_small_2">@dimen/_10sdp</dimen>      <!-- normal - (2 * 2)-->
+    <dimen name="text_small_3">@dimen/_8sdp</dimen>       <!-- normal - (3 * 2)-->
+    <dimen name="text_small_4">@dimen/_6sdp</dimen>       <!-- normal - (4 * 2)-->
+
+    <!--other-->
+    <dimen name="toolbar_height">@dimen/_40sdp</dimen>
+    <dimen name="toolbar_shadow">@dimen/_3sdp</dimen>
+    <dimen name="menu_shadow_width">5dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+
+
+    <!-- ======================================================================================= -->
+    <!-- *** Scope Specific *** -->
+    <!-- ======================================================================================= -->
+
+
+</resources>

@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">InterwQuest</string>
+    <!--Base-->
+    <string name="notification.success">Done!</string>
+    <string name="progress.loading">Loading..</string>
+    <string name="progress.wait">Please wait..</string>
+    <string name="progress.endless_error">Unknown error occurred while downloading content!</string>
+    <string name="action.retry">Retry</string>
+    <string name="action.retry_short">Retry</string>
+    <string name="action.cancel">Cancel</string>
+    <string name="action.ok">OK</string>
+
+    <!--Errors | Warnings-->
+    <string name="error.unknown_host">Server is not available!\nCheck your Internet connection.</string>
+    <string name="error.server_error">Server Error!</string>
+    <string name="error.unknown_error">Unknown error!</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
 </resources>

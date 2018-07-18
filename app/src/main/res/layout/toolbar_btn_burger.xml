@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbarBtnBurger"
+    style="@style/menuButton"
+    android:layout_width="@dimen/_37sdp"
+    android:layout_height="@dimen/toolbar_height"
+    android:paddingLeft="@dimen/_10sdp"
+    android:paddingTop="@dimen/text_small_2"
+    android:paddingBottom="@dimen/text_small_2"
+    android:paddingRight="@dimen/_10sdp"
+    android:src="@mipmap/ic_launcher_round"
+    tools:background="#eee"/>

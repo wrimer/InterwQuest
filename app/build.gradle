@@ -16,6 +16,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -29,6 +33,7 @@ dependencies {
     //MVP
     implementation "com.arello-mobile:moxy:1.5.5"
     implementation "com.arello-mobile:moxy-app-compat:1.5.5"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     annotationProcessor "com.arello-mobile:moxy-compiler:1.5.5"
     //Dagger2
     implementation "com.google.dagger:dagger:2.14.1"
