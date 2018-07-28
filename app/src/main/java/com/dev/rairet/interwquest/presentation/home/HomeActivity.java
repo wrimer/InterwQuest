@@ -1,8 +1,6 @@
 package com.dev.rairet.interwquest.presentation.home;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
@@ -28,7 +26,6 @@ public class HomeActivity extends BaseActivity implements HomeView {
                 });
 
 
-        Log.i("sdf","sdf");
         TextView textView = findViewById(R.id.tvHome);
         textView.setOnClickListener(view -> {
 
