@@ -6,7 +6,8 @@ import dagger.Subcomponent;
 
 @ActivityScope
 @Subcomponent(modules = {
-        QuestionModule.class
+        QuestionModule.class,
+        ThemesModule.class
 })
 public interface ActivityComponent {
 

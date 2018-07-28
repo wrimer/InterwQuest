@@ -1,6 +1,6 @@
-package com.dev.rairet.interwquest.business.questions;
+package com.dev.rairet.interwquest.business;
 
-import com.dev.rairet.interwquest.repositories.questions.QuestionRepository;
+import com.dev.rairet.interwquest.repositories.QuestionRepository;
 
 public class QuestionInteractor {
 

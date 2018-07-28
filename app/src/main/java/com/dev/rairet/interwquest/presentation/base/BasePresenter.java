@@ -5,7 +5,7 @@ import com.arellomobile.mvp.MvpView;
 
 import io.reactivex.disposables.CompositeDisposable;
 
-public class BasePresenter<View extends MvpView> extends MvpPresenter<MvpView> {
+public class BasePresenter<T extends MvpView> extends MvpPresenter<T> {
 
     protected CompositeDisposable obsContainer;
 
