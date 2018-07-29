@@ -33,6 +33,7 @@ public class HomeActivity extends BaseActivity implements HomeView {
         rvThemes.setLayoutManager(new LinearLayoutManager(this));
         adapter = new ThemesAdapter(theme -> presenter.onThemeClick(theme));
         rvThemes.setAdapter(adapter);
+
     }
 
     @Override

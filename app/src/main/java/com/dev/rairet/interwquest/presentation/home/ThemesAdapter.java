@@ -6,8 +6,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.dev.rairet.interwquest.R;
 import com.dev.rairet.interwquest.data.db.entities.Theme;
 
@@ -54,21 +58,34 @@ public class ThemesAdapter extends RecyclerView.Adapter<ThemesAdapter.ThemesView
         private Context context;
         private OnThemeClickListener listener;
 
-        private TextView tvName;
-        private TextView tvSecond;
+        private LinearLayout llItem;
+        private ImageView ivThemeAvatar;
+        private TextView tvThemeName;
+        private TextView tvQuestionCount;
+
 
         ThemesViewHolder(@NonNull View itemView, Context context, OnThemeClickListener listener) {
             super(itemView);
-            tvName = itemView.findViewById(R.id.tvName);
-            tvSecond = itemView.findViewById(R.id.tvSecond);
             this.context = context;
             this.listener = listener;
+
+            llItem = itemView.findViewById(R.id.llItem);
+            ivThemeAvatar = itemView.findViewById(R.id.ivThemeAvatar);
+            tvThemeName = itemView.findViewById(R.id.tvThemeName);
+            tvQuestionCount = itemView.findViewById(R.id.tvQuestionCount);
         }
 
         void render(Theme model) {
-            tvName.setText(model.name);
-            tvSecond.setText(String.valueOf(model.salary));
+
+            tvThemeName.setText(model.getThemeName());
+            tvQuestionCount.setText(String.format(context.getResources().getString(R.string.theme_question_count), model.getQuestionCount()));
+            Glide.with(context)
+                    .load(model.getImage())
+                    .apply(RequestOptions.circleCropTransform())
+                    .into(ivThemeAvatar);
+
             itemView.setOnClickListener(view -> listener.onThemeClicked(model));
+
         }
     }
 

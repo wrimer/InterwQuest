@@ -1,6 +1,5 @@
 package com.dev.rairet.interwquest.di.application;
 
-import android.arch.persistence.room.Room;
 import android.content.Context;
 
 import com.dev.rairet.interwquest.Configuration;
@@ -30,7 +29,7 @@ public class AppModule {
     @Provides
     @Singleton
     InterwQuestDb provideDatabase(Context ctx) {
-        return  RoomAsset.databaseBuilder(ctx,
+        return RoomAsset.databaseBuilder(ctx,
                 InterwQuestDb.class, Configuration.DATABASE_NAME)
                 .allowMainThreadQueries()
                 .build();

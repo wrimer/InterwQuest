@@ -1,12 +1,19 @@
 package com.dev.rairet.interwquest.presentation.home;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.dev.rairet.interwquest.App;
+import com.dev.rairet.interwquest.R;
 import com.dev.rairet.interwquest.business.ThemesInteractor;
+import com.dev.rairet.interwquest.data.db.InterwQuestDb;
 import com.dev.rairet.interwquest.data.db.entities.Theme;
 import com.dev.rairet.interwquest.presentation.base.BasePresenter;
+
+import java.io.ByteArrayOutputStream;
 
 import javax.inject.Inject;
 
@@ -37,6 +44,7 @@ public class HomePresenter extends BasePresenter<HomeView> {
                 ));
     }
 
+    @Inject InterwQuestDb db;
     public void onThemeClick(Theme theme) {
         Log.i("sf","sdf");
     }
