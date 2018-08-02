@@ -44,8 +44,6 @@ public class HomePresenter extends BasePresenter<HomeView> {
                 ));
     }
 
-    @Inject InterwQuestDb db;
     public void onThemeClick(Theme theme) {
-        Log.i("sf","sdf");
     }
 }

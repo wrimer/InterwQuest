@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rlThemeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/spacing_small_2"
+            android:paddingLeft="@dimen/spacing_normal"
+            android:paddingRight="@dimen/spacing_normal"
+            android:paddingTop="@dimen/spacing_small_2">
+
+            <TextView
+                android:id="@+id/tvThemeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_toLeftOf="@id/tvQuestionCount"
+                android:gravity="center"
+                tools:text="Java OOP"
+                tools:ignore="RtlHardcoded"/>
+
+            <TextView
+                android:id="@+id/tvQuestionCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_horizontal"
+                tools:text="1/12"
+                tools:ignore="RtlHardcoded"/>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/rlThemeName"
+            android:id="@+id/tvQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Theme Question"/>
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tvQuestion"
+            android:id="@+id/tvAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            tools:text="Theme answer"/>
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/tvAnswer"
+            android:id="@+id/tvCopyrights"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            tools:text="Theme copyrights"/>
+
+
+    </RelativeLayout>
+
+</ScrollView>

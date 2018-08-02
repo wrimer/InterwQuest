@@ -15,4 +15,11 @@ public interface ThemeDao {
 
     @Query("SELECT * FROM theme")
     Single<List<Theme>> getAll();
+
+    //==============================================================================================
+    // *** debug ***
+    //==============================================================================================
+
+    @Query("SELECT * FROM theme")
+    List<Theme> getAllDebug();
 }

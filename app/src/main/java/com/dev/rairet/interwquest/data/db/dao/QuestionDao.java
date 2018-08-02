@@ -17,5 +17,15 @@ public interface QuestionDao {
 
     @Query("SELECT * FROM question WHERE themeId=:themeId")
     Single<List<Question>> getQuestionsByTheme(final long themeId);
+
+    //==============================================================================================
+    // *** debug ***
+    //==============================================================================================
+    @Query("SELECT * FROM question")
+    List<Question> getAllDebug();
+
+    @Query("SELECT * FROM question WHERE themeId=:themeId")
+    List<Question> getQuestionsByThemeDebug(final long themeId);
+
 }
 

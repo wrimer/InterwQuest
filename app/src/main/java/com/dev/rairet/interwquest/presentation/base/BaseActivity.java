@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
@@ -145,9 +146,11 @@ public abstract class BaseActivity extends MvpAppCompatActivity implements MvpVi
     //==============================================================================================
     // *** Side menu ***
     //==============================================================================================
+    private static DrawerLayout drawer;
+
     private void initSideMenu() {
 
-        DrawerLayout drawer = findViewById(R.id.drawerLayout);
+        drawer = findViewById(R.id.drawerLayout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.action_cancel, R.string.action_ok);
         drawer.addDrawerListener(toggle);
@@ -160,8 +163,18 @@ public abstract class BaseActivity extends MvpAppCompatActivity implements MvpVi
         });
     }
 
-    public void openSideMenu(){
+    public void openSideMenu() {
         DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
         drawerLayout.openDrawer(Gravity.START);
     }
+
+    public static void disableSideMenu() {
+        drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+    }
+
+    public static void enableSideMenu() {
+        drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_OPEN);
+    }
+
+
 }
