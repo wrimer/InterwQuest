@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -27,8 +29,10 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_toLeftOf="@id/tvQuestionCount"
                 android:gravity="center"
-                tools:text="Java OOP"
-                tools:ignore="RtlHardcoded"/>
+                android:textSize="@dimen/text_large_1"
+                app:fontFamily="@font/raleway_extrabold"
+                tools:ignore="RtlHardcoded"
+                tools:text="Java OOP"/>
 
             <TextView
                 android:id="@+id/tvQuestionCount"
@@ -36,38 +40,49 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_horizontal"
-                tools:text="1/12"
-                tools:ignore="RtlHardcoded"/>
+                android:textSize="@dimen/text_large_1"
+                app:fontFamily="@font/raleway_extrabold"
+                tools:ignore="RtlHardcoded"
+                tools:text="1/12"/>
 
         </RelativeLayout>
 
 
         <TextView
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/rlThemeName"
             android:id="@+id/tvQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Theme Question"/>
+            android:layout_below="@id/rlThemeName"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/text_large_4"
+            app:fontFamily="@font/raleway_extrabold"
+            tools:text="Theme Question?"/>
 
         <TextView
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/tvQuestion"
             android:id="@+id/tvAnswer"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/tvQuestion"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:layout_marginTop="@dimen/spacing_large_2"
+            android:background="@drawable/bg_border"
+            android:fontFamily="@font/raleway_regular"
+            android:minHeight="@dimen/_220sdp"
             tools:text="Theme answer"/>
 
         <TextView
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/tvAnswer"
             android:id="@+id/tvCopyrights"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/tvAnswer"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal|bottom"
             tools:text="Theme copyrights"/>
-
 
     </RelativeLayout>
 
