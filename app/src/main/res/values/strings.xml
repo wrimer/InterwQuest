@@ -7,6 +7,15 @@
     <!--Specified-->
     <string name="theme.question_count">%s вопросов</string>
     <string name="question.count">%s / %s</string>
+    <string name="toolbar.title">INTERWQUEST</string>
+
+    <!--Plurals-->
+    <plurals name="question_plurals">
+        <item quantity="zero">нет вопросов</item>
+        <item quantity="one">%1$d вопрос</item>
+        <item quantity="few">%1$d вопроса</item>
+        <item quantity="many">%1$d вопросов</item>
+    </plurals>
 
 
 

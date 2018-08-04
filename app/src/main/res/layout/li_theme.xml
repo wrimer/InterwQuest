@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/theme_bg"
     android:orientation="horizontal">
 
     <LinearLayout
@@ -18,17 +20,23 @@
 
         <ImageView
             android:id="@+id/ivThemeAvatar"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            tools:background="@color/colorDivider"
             tools:ignore="ContentDescription"/>
 
         <TextView
+            android:textSize="@dimen/spacing_large_1"
             android:id="@+id/tvThemeName"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/spacing_small_2"
+            android:layout_marginRight="@dimen/spacing_small_2"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/spacing_small_2"
             android:paddingRight="@dimen/spacing_small_2"
+            android:textColor="@color/colorPrimaryText"
+            app:fontFamily="@font/raleway_extrabold"
             tools:text="CSS"/>
 
         <TextView
@@ -36,14 +44,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical|right"
+            android:textColor="@color/colorSecondaryText"
+            app:fontFamily="@font/raleway_extrabold"
             tools:ignore="RtlHardcoded"
             tools:text="12 вопросов"/>
     </LinearLayout>
 
     <View
-        android:layout_below="@id/llItem"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/colorDivider"/>
+        android:layout_below="@id/llItem"
+        android:background="@color/colorPrimaryDark"/>
 
 </RelativeLayout>

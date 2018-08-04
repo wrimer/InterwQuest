@@ -10,5 +10,6 @@
     android:paddingTop="@dimen/text_small_2"
     android:paddingBottom="@dimen/text_small_2"
     android:paddingRight="@dimen/_10sdp"
-    android:src="@mipmap/ic_launcher_round"
-    tools:background="#eee"/>
+    android:src="@mipmap/ic_burger"
+    tools:background="#eee"
+    tools:ignore="ContentDescription"/>

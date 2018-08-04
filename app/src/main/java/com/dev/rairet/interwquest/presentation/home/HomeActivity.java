@@ -26,7 +26,7 @@ public class HomeActivity extends BaseActivity implements HomeView {
 
     private void render() {
         enableToolbar(R.layout.toolbar_preset_home)
-                .setBackgroundColor(R.color.colorPrimary)
+                .setBackgroundColor(R.color.colorPrimaryDark)
                 .addBurgerButton(v -> openSideMenu());
 
         rvThemes = findViewById(R.id.rvThemes);

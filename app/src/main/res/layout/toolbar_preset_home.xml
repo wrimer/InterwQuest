@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar"
     style="@style/ToolbarV7"
     android:background="@color/colorPrimary"
@@ -13,6 +14,17 @@
         android:orientation="horizontal">
 
         <include layout="@layout/toolbar_btn_burger"/>
+
+        <TextView
+            android:textSize="@dimen/text_large_1"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:textColor="@android:color/white"
+            app:fontFamily="@font/raleway_extrabold"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/toolbar.title"/>
 
     </LinearLayout>
 

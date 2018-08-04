@@ -11,12 +11,17 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.request.RequestOptions;
 import com.dev.rairet.interwquest.R;
 import com.dev.rairet.interwquest.data.db.entities.Theme;
+import com.dev.rairet.interwquest.util.GlideApp;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import jp.wasabeef.glide.transformations.BlurTransformation;
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 public class ThemesAdapter extends RecyclerView.Adapter<ThemesAdapter.ThemesViewHolder> {
 
@@ -78,11 +83,17 @@ public class ThemesAdapter extends RecyclerView.Adapter<ThemesAdapter.ThemesView
         void render(Theme model) {
 
             tvThemeName.setText(model.getThemeName());
-            tvQuestionCount.setText(String.format(context.getResources().getString(R.string.theme_question_count), model.getQuestionCount()));
-            Glide.with(context)
+
+            tvQuestionCount.setText(context.getResources().getQuantityString
+                    (R.plurals.question_plurals, model.getQuestionCount(),model.getQuestionCount()));
+
+
+
+            GlideApp.with(context)
                     .load(model.getImage())
-                    .apply(RequestOptions.circleCropTransform())
+                    .circleCrop()
                     .into(ivThemeAvatar);
+
 
             itemView.setOnClickListener(view -> listener.onThemeClicked(model));
 
