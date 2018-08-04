@@ -1,32 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/grey</color>
-    <color name="colorPrimaryDark">@color/dark_grey</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#009688</color>
+    <color name="colorPrimaryDark">#00796B</color>
+    <color name="colorPrimaryLight">#B2DFDB</color>
+    <color name="colorAccent">#4CAF50</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#757575</color>
+    <color name="colorDivider">#BDBDBD</color>
 
-    <!--base palette-->
-    <color name="white">#fff</color>
-    <color name="black">#000</color>
-    <color name="grey">#777</color>
-    <color name="transparent">#0fff</color>
-    <color name="dark_grey">#4c4c4c</color>
-    <color name="grey_light">#A7A39A</color>
-    <color name="blue_dark">#0A037A</color>
-    <color name="blue">#171FB6</color>
-    <color name="blue_light">#1F3ECE</color>
-
-    <!--text-->
-    <color name="text_white">@color/white</color>
-    <color name="text_black">@color/black</color>
-    <color name="text_grey">@color/grey</color>
-    <color name="text_dark_grey">@color/dark_grey</color>
-
-    <!--other-->
-    <color name="alphaBlack">#1F000000</color>
-    <color name="selector_alpha_dark">#15000000</color>
-    <color name="divider">#ddd</color>
-    <color name="colorToolbar">@color/colorPrimaryDark</color>
-    <color name="menu.item">#0fff</color>
-    <color name="menu.item_pressed">#ddd</color>
-    <color name="menu.item_selected">#ddd</color>
 </resources>

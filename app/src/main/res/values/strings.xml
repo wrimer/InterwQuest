@@ -6,6 +6,8 @@
 
     <!--Specified-->
     <string name="theme.question_count">%s вопросов</string>
+    <string name="question.count">%s / %s</string>
+
 
 
 </resources>

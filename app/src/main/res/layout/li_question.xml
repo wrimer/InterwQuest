@@ -29,7 +29,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_toLeftOf="@id/tvQuestionCount"
                 android:gravity="center"
-                android:textSize="@dimen/text_large_1"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/text_small_1"
                 app:fontFamily="@font/raleway_extrabold"
                 tools:ignore="RtlHardcoded"
                 tools:text="Java OOP"/>
@@ -40,20 +41,33 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center_horizontal"
-                android:textSize="@dimen/text_large_1"
+                android:gravity="center"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/text_small_1"
                 app:fontFamily="@font/raleway_extrabold"
                 tools:ignore="RtlHardcoded"
-                tools:text="1/12"/>
-
+                tools:text="2/19"/>
         </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/rlThemeName"
+            android:background="@color/colorDivider"/>
 
 
         <TextView
+            android:background="@color/colorPrimaryLight"
             android:id="@+id/tvQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/rlThemeName"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/spacing_normal"
+            android:gravity="center"
+            android:paddingLeft="@dimen/spacing_normal"
+            android:paddingRight="@dimen/spacing_normal"
+            android:textColor="@color/colorPrimaryText"
             android:textSize="@dimen/text_large_4"
             app:fontFamily="@font/raleway_extrabold"
             tools:text="Theme Question?"/>
@@ -63,22 +77,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvQuestion"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
             android:layout_marginLeft="@dimen/spacing_normal"
             android:layout_marginRight="@dimen/spacing_normal"
-            android:layout_marginTop="@dimen/spacing_large_2"
+            android:layout_marginTop="@dimen/spacing_normal"
             android:background="@drawable/bg_border"
-            android:fontFamily="@font/raleway_regular"
             android:minHeight="@dimen/_220sdp"
+            android:padding="@dimen/spacing_small_2"
+            android:textColor="@color/colorPrimaryText"
+            app:fontFamily="@font/raleway_regular"
             tools:text="Theme answer"/>
 
         <TextView
+            android:paddingTop="@dimen/spacing_normal"
+            android:paddingBottom="@dimen/spacing_small_2"
+            android:paddingLeft="@dimen/spacing_normal"
+            android:paddingRight="@dimen/spacing_normal"
             android:id="@+id/tvCopyrights"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tvAnswer"
             android:layout_alignParentBottom="true"
+            android:layout_below="@id/tvAnswer"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal|bottom"

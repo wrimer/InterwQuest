@@ -4,16 +4,15 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.dev.rairet.interwquest.R;
 import com.dev.rairet.interwquest.data.db.entities.Question;
 import com.dev.rairet.interwquest.data.db.entities.Theme;
-import com.dev.rairet.interwquest.util.HtmlImageGetter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +36,7 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.Ques
 
     @Override
     public void onBindViewHolder(@NonNull QuestionsViewHolder holder, int position) {
-        holder.render(items.get(position));
+        holder.render(items.get(position), position, items.size());
     }
 
     @Override
@@ -73,10 +72,13 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.Ques
             tvCopyrights = itemView.findViewById(R.id.tvCopyrights);
         }
 
-        void render(Question model) {
-            tvThemeName.setText(Html.fromHtml(model.getQuestion()));
-            tvAnswer.setText(Html.fromHtml(model.getAnswer(), new HtmlImageGetter(context),null));
+        void render(Question model, int position, int itemsSize) {
+            tvThemeName.setText(Html.fromHtml("Java OOP"));
+            tvQuestion.setText(Html.fromHtml(model.getQuestion()));
+            tvAnswer.setText(Html.fromHtml(model.getAnswer()));
             tvCopyrights.setText(Html.fromHtml(model.getCopyrights()));
+            tvCopyrights.setMovementMethod(LinkMovementMethod.getInstance());
+            tvQuestionCount.setText(String.format(context.getResources().getString(R.string.question_count), position + 1, itemsSize));
 
         }
     }

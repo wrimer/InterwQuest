@@ -15,17 +15,7 @@ public class HtmlImageGetter implements Html.ImageGetter {
 
     @Override
     public Drawable getDrawable(String source) {
-        int id;
-
-        if (source.equals("css.png")) {
-            id = R.mipmap.css;
-        }
-        else if (source.equals("java_io.png")) {
-            id = R.mipmap.java_io;
-        }
-        else {
-            return null;
-        }
+        int id = context.getResources().getIdentifier(source,"mipmap",context.getPackageName());
 
         Drawable d = context.getResources().getDrawable(id);
         d.setBounds(0,0,d.getIntrinsicWidth(),d.getIntrinsicHeight());
