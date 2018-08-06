@@ -1,5 +1,6 @@
 package com.dev.rairet.interwquest.presentation.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +10,7 @@ import com.dev.rairet.interwquest.R;
 import com.dev.rairet.interwquest.data.db.entities.Theme;
 import com.dev.rairet.interwquest.presentation.base.BaseActivity;
 import com.dev.rairet.interwquest.presentation.base.BasePresenter;
+import com.dev.rairet.interwquest.presentation.questions.QuestionsActivity;
 
 import java.util.List;
 
@@ -39,6 +41,12 @@ public class HomeActivity extends BaseActivity implements HomeView {
     @Override
     public void showThemes(List<Theme> themes) {
         adapter.setItems(themes);
+    }
+
+    @Override
+    public void startQuestionsActivity() {
+        Intent intent = new Intent(this, QuestionsActivity.class);
+        startActivity(intent);
     }
 
     //==============================================================================================

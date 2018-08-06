@@ -13,6 +13,8 @@ import android.widget.TextView;
 import com.dev.rairet.interwquest.R;
 import com.dev.rairet.interwquest.data.db.entities.Question;
 import com.dev.rairet.interwquest.data.db.entities.Theme;
+import com.dev.rairet.interwquest.util.HtmlImageGetter;
+import com.dev.rairet.interwquest.util.HtmlTagHandler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,37 +51,36 @@ public class QuestionsAdapter extends RecyclerView.Adapter<QuestionsAdapter.Ques
         notifyDataSetChanged();
     }
 
+    public Question getItemByPosition(int position) {
+        return items.get(position);
+    }
+
     //==============================================================================================
     // *** View Holder ***
     //==============================================================================================
     public static class QuestionsViewHolder extends RecyclerView.ViewHolder {
 
         private Context context;
-        private TextView tvThemeName;
-        private TextView tvQuestionCount;
         private TextView tvQuestion;
         private TextView tvAnswer;
         private TextView tvCopyrights;
+        private OnAnswerClickListener listener;
 
         QuestionsViewHolder(@NonNull View itemView, Context context, OnAnswerClickListener listener) {
             super(itemView);
             this.context = context;
 
-            tvThemeName = itemView.findViewById(R.id.tvThemeName);
-            tvQuestionCount = itemView.findViewById(R.id.tvQuestionCount);
             tvQuestion = itemView.findViewById(R.id.tvQuestion);
             tvAnswer = itemView.findViewById(R.id.tvAnswer);
             tvCopyrights = itemView.findViewById(R.id.tvCopyrights);
+            this.listener = listener;
         }
 
         void render(Question model, int position, int itemsSize) {
-            tvThemeName.setText(Html.fromHtml("Java OOP"));
             tvQuestion.setText(Html.fromHtml(model.getQuestion()));
-            tvAnswer.setText(Html.fromHtml(model.getAnswer()));
+            tvAnswer.setText(Html.fromHtml(model.getAnswer(), new HtmlImageGetter(context), new HtmlTagHandler()));
             tvCopyrights.setText(Html.fromHtml(model.getCopyrights()));
             tvCopyrights.setMovementMethod(LinkMovementMethod.getInstance());
-            tvQuestionCount.setText(String.format(context.getResources().getString(R.string.question_count), position + 1, itemsSize));
-
         }
     }
 

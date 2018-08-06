@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.dev.rairet.interwquest.R;
 
@@ -22,13 +23,25 @@ public class ToolbarBuilder extends BaseToolbarBuilder<ToolbarBuilder> {
         super(ctx, toolbar, viewForSearch);
     }
 
-    /**
-     * Кнопка домой
-     */
-    public ToolbarBuilder addBurgerButton(View.OnClickListener listener) {
+
+    public void addBurgerButton(View.OnClickListener listener) {
         View view = findViewInToolbar(R.id.toolbarBtnBurger);
         view.setOnClickListener(listener);
-        return this;
+    }
+
+    public void addBackButton(View.OnClickListener listener) {
+        View view = findViewInToolbar(R.id.toolbarBtnBack);
+        view.setOnClickListener(listener);
+    }
+
+    public void setToolbarCountText(String text) {
+        View view = findViewInToolbar(R.id.tvToolbarCount);
+        ((TextView)view).setText(text);
+    }
+
+    public void setToolbarTitleText(String text) {
+        View view = findViewInToolbar(R.id.tvToolbarTitle);
+        ((TextView)view).setText(text);
     }
 
     public ToolbarBuilder setBackgroundColor(@ColorRes int colorResId) {
@@ -58,5 +71,4 @@ public class ToolbarBuilder extends BaseToolbarBuilder<ToolbarBuilder> {
         parent.addView(view, 0);
         return this;
     }
-
 }

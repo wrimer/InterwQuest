@@ -12,56 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:id="@+id/rlThemeName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/spacing_small_2"
-            android:paddingLeft="@dimen/spacing_normal"
-            android:paddingRight="@dimen/spacing_normal"
-            android:paddingTop="@dimen/spacing_small_2">
-
-            <TextView
-                android:id="@+id/tvThemeName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_gravity="center_horizontal"
-                android:layout_toLeftOf="@id/tvQuestionCount"
-                android:gravity="center"
-                android:textColor="@color/colorSecondaryText"
-                android:textSize="@dimen/text_small_1"
-                app:fontFamily="@font/raleway_extrabold"
-                tools:ignore="RtlHardcoded"
-                tools:text="Java OOP"/>
-
-            <TextView
-                android:id="@+id/tvQuestionCount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                android:textColor="@color/colorSecondaryText"
-                android:textSize="@dimen/text_small_1"
-                app:fontFamily="@font/raleway_extrabold"
-                tools:ignore="RtlHardcoded"
-                tools:text="2/19"/>
-        </RelativeLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@id/rlThemeName"
-            android:background="@color/colorDivider"/>
-
-
         <TextView
-            android:background="@color/colorPrimaryLight"
             android:id="@+id/tvQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rlThemeName"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/spacing_normal"
             android:gravity="center"
@@ -73,6 +27,7 @@
             tools:text="Theme Question?"/>
 
         <TextView
+            android:lineSpacingMultiplier="1.25"
             android:id="@+id/tvAnswer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -88,10 +43,7 @@
             tools:text="Theme answer"/>
 
         <TextView
-            android:paddingTop="@dimen/spacing_normal"
-            android:paddingBottom="@dimen/spacing_small_2"
-            android:paddingLeft="@dimen/spacing_normal"
-            android:paddingRight="@dimen/spacing_normal"
+            android:textColorLink="@color/colorPrimary"
             android:id="@+id/tvCopyrights"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -100,6 +52,10 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal|bottom"
+            android:paddingBottom="@dimen/spacing_small_2"
+            android:paddingLeft="@dimen/spacing_normal"
+            android:paddingRight="@dimen/spacing_normal"
+            android:paddingTop="@dimen/spacing_normal"
             tools:text="Theme copyrights"/>
 
     </RelativeLayout>

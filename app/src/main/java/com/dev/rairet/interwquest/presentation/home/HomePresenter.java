@@ -7,10 +7,12 @@ import android.util.Log;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.dev.rairet.interwquest.App;
+import com.dev.rairet.interwquest.Configuration;
 import com.dev.rairet.interwquest.R;
 import com.dev.rairet.interwquest.business.ThemesInteractor;
 import com.dev.rairet.interwquest.data.db.InterwQuestDb;
 import com.dev.rairet.interwquest.data.db.entities.Theme;
+import com.dev.rairet.interwquest.data.storage.MemoryStorage;
 import com.dev.rairet.interwquest.presentation.base.BasePresenter;
 
 import java.io.ByteArrayOutputStream;
@@ -25,6 +27,9 @@ public class HomePresenter extends BasePresenter<HomeView> {
 
     @Inject
     ThemesInteractor themesInteractor;
+
+    @Inject
+    MemoryStorage memoryStorage;
 
     public HomePresenter() {
         App.getComponent().activityComponent().inject(this);
@@ -45,5 +50,7 @@ public class HomePresenter extends BasePresenter<HomeView> {
     }
 
     public void onThemeClick(Theme theme) {
+        memoryStorage.put(Configuration.THEME_KEY,theme);
+        getViewState().startQuestionsActivity();
     }
 }

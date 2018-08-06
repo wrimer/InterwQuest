@@ -26,7 +26,7 @@
             tools:ignore="ContentDescription"/>
 
         <TextView
-            android:textSize="@dimen/spacing_large_1"
+            android:textSize="@dimen/spacing_small_1"
             android:id="@+id/tvThemeName"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -40,6 +40,7 @@
             tools:text="CSS"/>
 
         <TextView
+            android:textSize="@dimen/text_small_3"
             android:id="@+id/tvQuestionCount"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

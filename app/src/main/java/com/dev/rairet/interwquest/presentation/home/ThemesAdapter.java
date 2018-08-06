@@ -22,6 +22,7 @@ import java.util.List;
 
 import jp.wasabeef.glide.transformations.BlurTransformation;
 import jp.wasabeef.glide.transformations.CropCircleTransformation;
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class ThemesAdapter extends RecyclerView.Adapter<ThemesAdapter.ThemesViewHolder> {
 
@@ -87,13 +88,10 @@ public class ThemesAdapter extends RecyclerView.Adapter<ThemesAdapter.ThemesView
             tvQuestionCount.setText(context.getResources().getQuantityString
                     (R.plurals.question_plurals, model.getQuestionCount(),model.getQuestionCount()));
 
-
-
             GlideApp.with(context)
                     .load(model.getImage())
-                    .circleCrop()
+                    .transform(new RoundedCornersTransformation(25,0))
                     .into(ivThemeAvatar);
-
 
             itemView.setOnClickListener(view -> listener.onThemeClicked(model));
 

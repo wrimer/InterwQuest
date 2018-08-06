@@ -11,4 +11,6 @@ import java.util.List;
 public interface HomeView extends MvpView {
 
     void showThemes(List<Theme> list);
+
+    void startQuestionsActivity();
 }

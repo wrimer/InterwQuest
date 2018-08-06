@@ -2,8 +2,11 @@ package com.dev.rairet.interwquest.presentation.questions;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.dev.rairet.interwquest.App;
-import com.dev.rairet.interwquest.data.db.InterwQuestDb;
+import com.dev.rairet.interwquest.Configuration;
+import com.dev.rairet.interwquest.business.QuestionInteractor;
+import com.dev.rairet.interwquest.data.db.entities.Question;
 import com.dev.rairet.interwquest.data.db.entities.Theme;
+import com.dev.rairet.interwquest.data.storage.MemoryStorage;
 import com.dev.rairet.interwquest.presentation.base.BasePresenter;
 
 import javax.inject.Inject;
@@ -15,20 +18,37 @@ import io.reactivex.schedulers.Schedulers;
 public class QuestionsPresenter extends BasePresenter<QuestionsView> {
 
     @Inject
-    InterwQuestDb db;
+    QuestionInteractor questionInteractor;
+    @Inject
+    MemoryStorage memoryStorage;
 
     @Override
     protected void onFirstViewAttach() {
         super.onFirstViewAttach();
-        obsContainer.add(db.questionDao().getQuestionsByTheme(1)
+        getQuestionsList();
+    }
+
+    private void getQuestionsList() {
+        Theme theme = (Theme) memoryStorage.getAndClear(Configuration.THEME_KEY);
+        obsContainer.add(questionInteractor.getQuestionsById(theme.getId())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(questions -> {
-                    getViewState().showQuestions(questions);
+                .subscribe(response -> {
+                    getViewState().setQuestionsList(response);
                 }));
     }
 
-    public void onQuestionClick(Theme item) {
+
+    public void onRecyclerScroll(Question item, int position) {
+        obsContainer.add(questionInteractor.getThemeById(item.getThemeId())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(response -> {
+                    getViewState().updateToolbarInfo(response,position);
+                }));
+    }
+
+    public void onAnswerClick(Theme item) {
     }
 
     public QuestionsPresenter() {

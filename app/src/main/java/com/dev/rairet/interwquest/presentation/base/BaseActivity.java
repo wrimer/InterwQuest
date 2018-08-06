@@ -172,9 +172,4 @@ public abstract class BaseActivity extends MvpAppCompatActivity implements MvpVi
         drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
     }
 
-    public static void enableSideMenu() {
-        drawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_OPEN);
-    }
-
-
 }
